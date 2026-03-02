@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+dist/
+build/
+
+# Virtual environment
+.venv/
+env/
+venv/
+
+# ROS2 logs
+log/
+*.db3
+*.mcap
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store

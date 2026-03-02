@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=65", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tools_zed2i"
+version = "0.1.0"
+description = "Modular ROS2-based toolkit for ZED2i camera integration."
+authors = [
+    { name = "Werikson Alves" }
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "PyYAML",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
