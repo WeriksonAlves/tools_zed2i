@@ -1,0 +1,10 @@
+# Images
+
+source /opt/ros/humble/setup.bash
+cd ~/Dev/tools_zed2i
+source .venv/bin/activate     # se estiver usando venv
+pip install -e .
+
+# Em outro terminal, rode o ZED ROS2 wrapper (que publica as imagens)
+# Depois, neste terminal:
+python examples/example_images.py

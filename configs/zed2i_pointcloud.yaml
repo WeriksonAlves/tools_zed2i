@@ -1,0 +1,39 @@
+%YAML:1.0
+
+# ZED2i tools configuration file
+
+active_presets: "record_pointcloud, downsample_heavy"
+
+presets:
+  record_pointcloud:
+    io:
+      save_to_disk: true
+      output_dir: "./data/ply"
+      filename_prefix: "zed_frame_"
+
+  downsample_heavy:
+    processing:
+      enable_downsampling: true
+      voxel_size: 0.08
+      max_range: 25.0
+
+camera:
+  name: "zed2i"
+  namespace: "/zed2i/zed_node"
+  pointcloud_topic: "/zed2i/zed_node/point_cloud/cloud_registered"
+  frame_id: "zed2i_left_camera_frame"
+
+processing:
+  enable_downsampling: false
+  voxel_size: 0.05
+  max_range: 30.0
+
+io:
+  save_to_disk: false
+  output_dir: "./data/ply"
+  filename_prefix: "zed_frame_"
+
+ros:
+  qos_depth: 5
+  qos_reliability: "reliable"      # or "best_effort"
+  qos_durability: "volatile"       # or "transient_local"

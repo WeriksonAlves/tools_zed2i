@@ -1,0 +1,38 @@
+%YAML:1.0
+
+# Simple ZED2i image configuration
+
+active_presets: ""   # opcional, não vamos usar presets agora
+
+camera:
+  name: "zed2i"
+  namespace: "/zed2i/zed_node"
+
+images:
+  use_left: true
+  use_right: false
+  use_stereo: false
+
+  left_topic: "/zed2i/zed_node/left/image_rect_color"
+  right_topic: "/zed2i/zed_node/right/image_rect_color"
+  stereo_topic: "/zed2i/zed_node/rgb/image_rect_color"
+
+  record: false
+  output_dir: "./data/images"
+  filename_prefix: "zed_"
+
+# Estes blocos podem ficar aqui para o futuro (nuvens, etc.), mas não serão usados agora
+processing:
+  enable_downsampling: false
+  voxel_size: 0.05
+  max_range: 30.0
+
+io:
+  save_to_disk: false
+  output_dir: "./data/ply"
+  filename_prefix: "zed_frame_"
+
+ros:
+  qos_depth: 5
+  qos_reliability: "reliable"
+  qos_durability: "volatile"
